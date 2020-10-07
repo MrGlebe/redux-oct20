@@ -8,11 +8,19 @@ export default class PostForm extends React.Component {
         this.state = {}
     }
 
+    submitHandler = (e) => {
+        e.preventDefault();
+    };
+
     render() {
         return (
-            <div>
-                <h1>Post Form</h1>
-            </div>
+            <form onSubmit={this.submitHandler}>
+                <div className="form-group">
+                    <label htmlFor="title">Password</label>
+                    <input type="text" className="form-control" id="title" />
+                </div>
+                <button className="btn btn-success" type="submit">Create post</button>
+            </form>
         )
     }
 }
