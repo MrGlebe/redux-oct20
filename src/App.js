@@ -5,10 +5,10 @@ import Posts from './components/Posts';
 
 function App() {
   return (
-     <div className="wrapper pt-3">
+     <div className="wrapper pt-5">
        <div className="container">
 
-         <div className="row">
+         <div className="row mb-5">
            <div className="col">
              <PostForm />
            </div>
