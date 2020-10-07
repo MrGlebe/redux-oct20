@@ -1,4 +1,5 @@
 import React from 'react';
+import PostForm from './components/PostForm';
 
 function App() {
   return (
@@ -6,7 +7,7 @@ function App() {
        <div className="container">
          <div className="row">
            <div className="col">
-             <h2>Form</h2>
+             <PostForm />
            </div>
        </div>
          <div className="row">
