@@ -8,6 +8,13 @@ export default () => {
     const dispatch = useDispatch();
 
     const posts = useSelector(state => state.posts.fetchedPosts);
+    const loading = useSelector(state => state.app.loading);
+
+    if(loading) {
+        return <p>
+            Loading Posts...
+        </p>
+    }
 
     if(!posts.length) {
         return (

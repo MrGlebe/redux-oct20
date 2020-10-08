@@ -5,16 +5,22 @@ export const createPost = (post) => {
     }
 };
 
+export const showLoading = () => {
+    return { type: 'SHOW_LOADER'}
+};
+
+export const hideLoading = () => {
+    return { type: 'HIDE_LOADING'}
+};
+
+export const showAlert = (text) => {
+    return { type: 'SHOW_ALERT', payload: text}
+};
+
+export const hideAlert = () => {
+    return { type: 'HIDE_ALERT'}
+};
+
 export const fetchPosts = () => {
-
-    return async dispatch => {
-
-        const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=5');
-        const json = await res.json();
-
-        dispatch({
-            type: 'FETCH_POSTS',
-            payload: json
-        });
-    }
+    return { type: 'REQUEST_POSTS' };
 };

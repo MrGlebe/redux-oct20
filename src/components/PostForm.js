@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {createPost} from '../redux/actions';
+import {createPost, showAlert} from '../redux/actions';
 
 class PostForm extends React.Component {
 
@@ -16,12 +16,11 @@ class PostForm extends React.Component {
         e.preventDefault();
 
         const {title} = this.state;
+        const {createPost, showAlert} = this.props;
 
         if (!title.trim()) {
-            return;
+            return showAlert('Введите текст в поле заметки');
         }
-
-        const {createPost} = this.props;
 
         const newPost = {
             title,
@@ -63,4 +62,4 @@ class PostForm extends React.Component {
     }
 }
 
-export default connect(null, {createPost})(PostForm);
+export default connect(null, {createPost, showAlert})(PostForm);
