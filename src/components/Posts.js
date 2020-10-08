@@ -4,11 +4,11 @@ import Post from './Post';
 
  const Posts = ({posts}) => {
 
-    if(!posts) {
+    if(!posts.length) {
         return <p>No posts yet</p>
     }
 
-    return  posts.map( post => <Post post={post} key={post} />);
+    return  posts.map( post => <Post post={post} key={post.id} />);
 };
 
  const mapStateToProps = state => {
@@ -17,8 +17,5 @@ import Post from './Post';
     }
  };
 
- const mapDispatchToProps = dispatch => {
 
- };
-
-export default connect(mapStateToProps, mapDispatchToProps)(Posts);
+export default connect(mapStateToProps, null)(Posts);
